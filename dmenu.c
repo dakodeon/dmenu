@@ -56,7 +56,7 @@ static Drw *drw;
 static Clr *scheme[SchemeLast];
 
 /* Temporary arrays to allow overriding xresources values */
-static char *colortemp[4];
+static char *colortemp[8];
 static char *tempfonts;
 
 #include "config.h"
@@ -936,6 +936,22 @@ readxresources(void) {
 			colors[SchemeSel][ColFg] = strdup(xval.addr);
 		else
 			colors[SchemeSel][ColFg] = strdup(colors[SchemeSel][ColFg]);
+		if (XrmGetResource(xdb, "dmenu.selbackground-hl", "*", &type, &xval))
+			colors[SchemeSelHighlight][ColBg] = strdup(xval.addr);
+		else
+			colors[SchemeSelHighlight][ColBg] = strdup(colors[SchemeSelHighlight][ColBg]);
+		if (XrmGetResource(xdb, "dmenu.selforeground-hl", "*", &type, &xval))
+			colors[SchemeSelHighlight][ColFg] = strdup(xval.addr);
+		else
+			colors[SchemeSelHighlight][ColFg] = strdup(colors[SchemeSelHighlight][ColFg]);
+		if (XrmGetResource(xdb, "dmenu.normbackground-hl", "*", &type, &xval))
+			colors[SchemeNormHighlight][ColBg] = strdup(xval.addr);
+		else
+			colors[SchemeNormHighlight][ColBg] = strdup(colors[SchemeNormHighlight][ColBg]);
+		if (XrmGetResource(xdb, "dmenu.normforeground-hl", "*", &type, &xval))
+			colors[SchemeNormHighlight][ColFg] = strdup(xval.addr);
+		else
+			colors[SchemeNormHighlight][ColFg] = strdup(colors[SchemeNormHighlight][ColFg]);
 
 		XrmDestroyDatabase(xdb);
 	}
@@ -1019,6 +1035,14 @@ main(int argc, char *argv[])
 	   colors[SchemeSel][ColBg]  = strdup(colortemp[2]);
 	if ( colortemp[3])
 	   colors[SchemeSel][ColFg]  = strdup(colortemp[3]);
+	if ( colortemp[4])
+	   colors[SchemeSelHighlight][ColBg]  = strdup(colortemp[4]);
+	if ( colortemp[5])
+	   colors[SchemeSelHighlight][ColFg]  = strdup(colortemp[5]);
+	if ( colortemp[6])
+	   colors[SchemeNormHighlight][ColBg]  = strdup(colortemp[6]);
+	if ( colortemp[7])
+	   colors[SchemeNormHighlight][ColFg]  = strdup(colortemp[7]);
 
 	if (!drw_fontset_create(drw, (const char**)fonts, LENGTH(fonts)))
 		die("no fonts could be loaded.");
