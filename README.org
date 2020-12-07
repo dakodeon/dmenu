@@ -16,6 +16,7 @@
 *** Xresouces highlight colors
     
     File: [[./my-patches/xres-hl.diff/]]
+
     This patch adds Xresouces options to modify highliting
     colors. It should be applied after both the [[./patches/dmenu-highlight-4.9.diff/][highlight]] and the
     [[./patches/dmenu-xresources-4.9.diff/][xresources]] patches. 
