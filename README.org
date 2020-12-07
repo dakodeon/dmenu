@@ -13,19 +13,16 @@
    Inside the directory [[./my-patches/]] I will keep whatever patches I have
    defined for personal use.
 
-   - [[./my-patches/xres-hl.diff/]]
-     This patch should be applied after both the [[./patches/dmenu-highlight-4.9.diff/][highlight]] and the
-     [[./patches/dmenu-xresources-4.9.diff/][xresources]] patches. It adds Xresouces options to modify highliting
-     colors.
-
-     Four new options are available:
+*** Xresouces highlight colors
+    
+    File: [[./my-patches/xres-hl.diff/]]
+    This patch adds Xresouces options to modify highliting
+    colors. It should be applied after both the [[./patches/dmenu-highlight-4.9.diff/][highlight]] and the
+    [[./patches/dmenu-xresources-4.9.diff/][xresources]] patches. 
+    
+    Four new options are provided:
      + =selbackground-hl=: The selected entry's highlighted background color.
-
      + =selforeground-hl=: The selected entry's highlighted text color.
-
      + =normbackground-hl=: The other entries' highlighted background
        color.
-
      + =normforeground-hl=: The other entries' highlighted text color.
-       
-     
