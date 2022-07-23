@@ -1,6 +1,11 @@
 *.orig
 *.rej
 *.o
+config.h
 dmenu
+<<<<<<< HEAD
+=======
+stest
+>>>>>>> 5bbefff (Updated gitignore)
 patches/*
 !README.orig
