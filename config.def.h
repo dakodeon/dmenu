@@ -30,3 +30,6 @@ static unsigned int min_lineheight = 8;
  * for example: " /?\"&[]"
  */
 static const char worddelimiters[] = " ";
+
+/* -pn option; preselected item starting from 0 */
+static unsigned int preselected = 0;
