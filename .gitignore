@@ -1,6 +1,0 @@
-*.orig
-*.rej
-*.o
-dmenu
-patches/*
-!README.orig
