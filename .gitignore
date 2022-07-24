@@ -3,12 +3,7 @@
 *.o
 config.h
 dmenu
-<<<<<<< HEAD
-=======
 stest
-<<<<<<< HEAD
->>>>>>> 5bbefff (Updated gitignore)
 patches/*
-=======
->>>>>>> 1412655 (added patches dir temporarily)
 !README.orig
+*.~undo-tree~
