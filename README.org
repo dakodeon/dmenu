@@ -1,4 +1,4 @@
-* My build of Dmenu
+* LUKEBASS DMENU
 
   This is my build of dmenu, forked by the [[https://tools.suckless.org/dmenu][suckless guys]]. You can see the
   original README [[file:./README.orig][here]].
@@ -6,24 +6,74 @@
   The patches applied are located in [[./patches/]]. Unfortunately I do not
   remember the order of patching.
 
-  This version of dmenu: 4.9
-  
-** My patches
+  This version of dmenu: 5.1. It was rebased on top of the previous
+  version, 4.9.
 
-   Inside the directory [[./my-patches/]] I will keep whatever patches I have
-   defined for personal use.
+  Date of build: [2022-07-23]
 
-*** Xresouces highlight colors
-    
-    File: [[./my-patches/xres-hl.diff/]]
+** APPLIED PATCHES
 
-    This patch adds Xresouces options to modify highliting
-    colors. It should be applied after both the [[./patches/dmenu-highlight-4.9.diff/][highlight]] and the
-    [[./patches/dmenu-xresources-4.9.diff/][xresources]] patches. 
-    
-    Four new options are provided:
-     + =selbackground-hl=: The selected entry's highlighted background color.
-     + =selforeground-hl=: The selected entry's highlighted text color.
-     + =normbackground-hl=: The other entries' highlighted background
+*** Highlight
+
+Highlights the characters that match on the items.
+
+*** Lineheight
+
+Allows for the line height to change, else it follows the height of the
+font. I changed the default lineheight to 25.
+
+*** Center
+
+Adds an option to place dmenu to the center of the screen.
+
+*** Grid
+
+Adds an option to present dmenu as a grid.
+
+*** Gridnav
+
+Allows to move left and right on a grid.
+
+*** Reject no match
+
+Do not allow a query if it would result to no match.
+
+*** Instant
+
+Adds an option to select an item immediately if it is the only option.
+
+*** Numbers
+
+Show number of selected items/total items.
+
+*** Initial text
+
+Adds an option to specify initial text to the prompt.
+
+*** Preselect
+
+Adds an option to define a preselected item by number. The default option
+name was changed from /-n/ to /-pn/, due to the =instant= patch providing
+the same option.
+
+*** Pass
+
+Adds an option to receive a password. Typed characters are replaced with dots.
+
+*** Xresources
+
+Read color and fonts from the =Xresources= file.
+
+*** Xres-hl
+
+File: [[./my-patches/xres-hl.diff/]]
+
+Patch that I wrote to add color options for the highlight patch in Xresources.
+
+Four new options are provided:
+     - =selbackground-hl=: The selected entry's highlighted background color.
+     - =selforeground-hl=: The selected entry's highlighted text color.
+     - =normbackground-hl=: The other entries' highlighted background
        color.
-     + =normforeground-hl=: The other entries' highlighted text color.
+     - =normforeground-hl=: The other entries' highlighted text color.
+  
